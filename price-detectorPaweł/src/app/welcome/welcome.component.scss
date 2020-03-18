@@ -1,0 +1,366 @@
+@import "../config";
+
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+
+    &__logo {
+        justify-content: center;
+        z-index: $z-navbar;
+
+    }
+
+    &__action {
+        justify-content: flex-end;
+        background-color: $nav-blue;
+        z-index: $z-navbar;
+
+        .menu-button {
+            @include button-white;
+            width: 100px;
+            height: 30px;
+
+        }
+
+        .menu-button:last-child {
+            margin-left: 10px;
+        }
+
+        .menu-button:hover {
+            @include button-white--selected;
+            color: $primary-color;
+        }
+
+    }
+}
+
+.content-wrapper {
+    .save-section {
+        width: 100%;
+        background: url("./../../assets/img/manhattan.jpg") no-repeat center;
+        background-size: cover;
+        // This pattern is downloaded from www.subtlepatterns.com
+        position: relative;
+
+        .section-wrapper {
+            height: 100%;
+
+            @include flex-center;
+            flex-direction: column !important;
+
+            margin: 0 auto;
+
+            .section__title {
+                text-align: center;
+                color: #fff;
+                font-size: 30px;
+                margin: 20px 0;
+                z-index: 10;
+            }
+
+            .box-wrapper {
+
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+                z-index: 10;
+
+                .box {
+                    height: 100px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding-top: 10px;
+                    //border: 1px solid #000;
+                    border-radius: 5px;
+                    max-width: 345px;
+                    width: 100%;
+                    background: #fff;
+                    opacity: 0.9;
+                    margin: 0 7px 20px 7px;
+                    font-size: 12px;
+
+                    &__time {
+                        //margin: 15px;
+                    }
+
+                    &__money {
+                        //margin: 15px 0;
+                    }
+
+                    &__satisfaction {
+                        //margin: 15px;
+                    }
+
+                    &--header {
+                        font-size: 22px;
+                        font-weight: 600;
+                    }
+
+                    &--img {
+                        font-size: 60px;
+                    }
+                }
+            }
+
+
+        }
+    }
+
+    .movie-section {
+        width: 100%;
+        background: url("./../../assets/img/polaroid.png");
+        @include flex-center;
+
+        .section-wrapper {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1024px;
+
+            .manual-part,
+            .movie-part {
+                width: 100%;
+                @include flex-center;
+            }
+
+            .manual-part {
+                flex-direction: column;
+                margin-bottom: 30px;
+                &__header {
+                    width: 100%;
+                    text-align: center;
+                    margin-bottom: 30px;
+                    font-size: 30px;
+                }
+
+                &__point {
+                    list-style: none;
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                    display: flex;
+                    flex-direction: row;
+
+                    .point__icon {
+                        margin-right: 12px;
+                    }
+                }
+            }
+
+            .box__movie {
+                width: 100%;
+                //margin-bottom: 55px;
+            }
+        }
+    }
+
+    .brands-section {
+        width: 100%;
+        background: url("../../assets/img/architecture.jpg");
+        position: relative;
+
+        .section-wrapper {
+            height: 300px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 1024px;
+            margin: 0 auto;
+
+            .box__brand {
+                width: 130px;
+                height: 130px;
+                z-index: 10;
+
+                &--x-kom {
+                    background: url("./../../assets/img/xkom.png");
+                    background-size: cover;
+                }
+
+                &--morele {
+                    background: url("./../../assets/img/morele.png");
+                    background-size: cover;
+                }
+
+                &--rtv {
+                    background: url("./../../assets/img/rtv.gif");
+                    background-size: cover;
+                }
+
+                &--aliexpress {
+                    background: url("./../../assets/img/aliexpress.jpg");
+                    background-size: cover;
+                }
+            }
+        }
+    }
+}
+
+
+.main-footer {
+    //position: absolute;
+    //bottom: 0;
+    //left: 0;
+    //width: 100vw;
+    height: 60px;
+    background: $nav-blue;
+    @include flex-center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.bg-shadow {
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    background: #666;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@include phone {
+    .content-wrapper {
+        .movie-section {
+
+            .section-wrapper {
+
+                .box__movie {
+                    max-width: 400px;
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+
+@include tablet {
+    .navbar {
+        flex-direction: row;
+        z-index: $z-navbar;
+
+        &__logo {
+            justify-content: flex-start;
+            background: $primary-color;
+
+        }
+
+        &__action {
+            background-color: unset;
+            z-index: $z-navbar;
+
+        }
+    }
+
+    .content-wrapper {
+        .save-section {
+            min-height: calc(50vh - 64px);
+            @include flex-center;
+
+            .section-wrapper {
+                flex-direction: row;
+                //justify-content: space-between;
+                //height: calc(33.333vw - 34.333px);
+
+                .box-wrapper {
+                    justify-content: space-around;
+
+                    .box {
+                        height: 130px;
+                        justify-content: space-around;
+                    }
+                }
+
+            }
+        }
+
+        .movie-section {
+            //height: calc(33.333vh - 34px);
+
+            .section-wrapper {
+                //height: calc(33.333vw - 34.333px);
+
+
+                .box__movie {
+                    max-width: 500px;
+                    height: 250px;
+                    margin-bottom: 55px;
+                }
+            }
+        }
+
+        .brands-section {
+            //height: calc(33.333vh - 34px);
+
+            .section-wrapper {
+                //height: calc(33.333vw - 34.333px);
+            }
+        }
+    }
+
+}
+
+@include desktop {
+    .content-wrapper {
+        .save-section {
+            .section-wrapper {
+                .box-wrapper {
+                    .box {
+                        margin: 10px;
+                    }
+                }
+            }
+        }
+
+        .movie-section {
+            padding: 90px 0;
+            .section-wrapper {
+                flex-direction: row;
+            }
+        }
+
+        .brands-section {
+            .section-wrapper {
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+@include desktop-xl {
+    .content-wrapper {
+        .save-section {
+            .section-wrapper {
+                .section__title {
+                    font-size: 45px;
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                }
+
+                .box-wrapper {
+                    .box {
+                        margin: 30px;
+                    }
+                }
+            }
+        }
+
+        .movie-section {
+            .section-wrapper {
+                .manual-part {
+                    margin-right: 15px;
+                }
+
+                .movie-part {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}

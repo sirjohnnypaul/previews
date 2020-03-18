@@ -1,0 +1,36 @@
+@import "../../config";
+
+.content-wrapper {
+  min-height: calc(100vh - 128px);
+  //background-color: $lime-yellow;
+  display: flex;
+  justify-content: center;
+
+  .product-table {
+    width: 100%;
+  }
+
+  .product-table-row:nth-child(2n+1) {
+    background-color: $lime-yellow;
+  }
+
+  .buy-now-btn {
+    color: #000;
+  }
+}
+
+
+
+@include tablet {
+  .content-wrapper {
+    min-height: calc(100vh - 64px);
+
+    .product-table {
+      max-width: 1000px;
+    }
+  }
+}
+
+@include desktop {
+
+}

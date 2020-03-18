@@ -1,0 +1,27 @@
+<h3 mat-dialog-title>Login</h3>
+<mat-dialog-content class="login-dialog">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="username"
+        id="username"
+        placeholder="Username">
+      <mat-error *ngIf="loginForm.get('username').hasError('required')">Username is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        formControlName="password"
+        id="password"
+        placeholder="Password">
+      <mat-error *ngIf="loginForm.get('password').hasError('required')">Password is required</mat-error>
+    </mat-form-field>
+    <button class="login-button" type="submit" [disabled]="!loginForm.valid">Login</button>
+  </form>
+
+</mat-dialog-content>
+

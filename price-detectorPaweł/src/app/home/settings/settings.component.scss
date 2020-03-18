@@ -1,0 +1,53 @@
+@import "../../config";
+
+.content-wrapper {
+    min-height: calc(100vh - 128px);
+    display: flex;
+    justify-content: center;
+}
+
+.section-title {
+    margin-top: 10px;
+    margin-bottom: 3px;
+    font-weight: 600;
+}
+
+.forms-wrapper {
+    width: 100vw;
+    padding: 10px 20px;
+
+    .field-edit__form {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        .field-edit__box {
+            display: flex;
+            flex-direction: column;
+            flex: auto 1 1;
+        }
+
+        .field-edit__input {
+            margin-right: 10px;
+            flex: auto 1 1;
+        }
+
+    }
+}
+
+@include phone {
+    .section-title {
+        margin-top: 20px;
+    }
+}
+
+@include tablet {
+    .forms-wrapper {
+        max-width: 600px;
+    }
+
+    .section-title {
+        margin-top: 35px;
+    }
+}

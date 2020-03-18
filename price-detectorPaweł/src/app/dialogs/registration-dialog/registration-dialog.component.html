@@ -1,0 +1,52 @@
+<h3 mat-dialog-title>Register</h3>
+<mat-dialog-content class="registration-dialog">
+  <form (ngSubmit)="onRegistration()" [formGroup]="registrationForm">
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        id="name"
+        formControlName="username"
+        placeholder="Username">
+      <mat-error *ngIf="registrationForm.get('username').hasError('required')">Username is required</mat-error>
+      <mat-error *ngIf="registrationForm.get('username').hasError('minLength') && !registrationForm.get('username').hasError('required')">Username should contain at least 6 characters</mat-error>
+      <mat-error *ngIf="registrationForm.get('username').hasError('checkIfUsernameExist')">Username already exist</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Email">
+      <mat-error *ngIf="registrationForm.get('email').hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="registrationForm.get('email').hasError('email') && !registrationForm.hasError('required')">Enter a valid email address</mat-error>
+      <mat-error *ngIf="registrationForm.get('email').hasError('email') && !registrationForm.hasError('checkIfEmailExist')">Enter already exist</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Password">
+      <mat-error *ngIf="registrationForm.get('password').hasError('required')">Password is required</mat-error>
+      <mat-error *ngIf="registrationForm.get('password').hasError('minLength') && !registrationForm.get('password').hasError('required')">Password should contain at least 8 characters</mat-error>
+      <mat-error *ngIf="registrationForm.get('password').hasError('minLength')">Password should contain at least 8 characters</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        id="confPassword"
+        formControlName="confPassword"
+        placeholder="Confirm password">
+      <!--<mat-error *ngIf="registrationForm.get('password').hasError('required')">Password is required</mat-error>-->
+      <!--<mat-error *ngIf="registrationForm.get('password').hasError('minLength')">Password is too short</mat-error>-->
+    </mat-form-field>
+    <mat-checkbox>Accept statute</mat-checkbox>
+    <button class="registration-button" type="submit">Register</button>
+  </form>
+
+</mat-dialog-content>
+

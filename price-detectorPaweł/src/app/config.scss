@@ -1,0 +1,140 @@
+$lime-yellow: #BCD24E;
+$nav-blue: #4E72D2;
+$gray-dark: #4C4D45;
+
+$primary-color: #3f51b5;
+
+$red-dark: #A43838;
+$green-dark: #2B6F3B;
+
+$orange-ceneo: #f7941e;
+
+// Z-index definitions
+$z-navbar: 10;
+$z-modal: 100;
+
+
+// Font size
+$nav-default-size: 20px;
+
+// RWD breakpoints
+@mixin phone {
+    @media all and (min-width: 481px) {
+        @content
+    }
+}
+
+@mixin tablet {
+    @media all and (min-width: 769px) {
+        @content
+    }
+}
+
+@mixin desktop {
+    @media all and (min-width: 992px) {
+        @content
+    }
+}
+
+@mixin desktop-xl {
+    @media all and (min-width: 1200px) {
+        @content
+    }
+}
+
+@mixin flex-center {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+@mixin button-outline {
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    background: transparent;
+    border-radius: 4px;
+    border: 2px solid #fff;
+    @include flex-center;
+}
+
+@mixin button-outline--green {
+    color: $green-dark;
+
+    border: 2px solid $green-dark;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+
+    background: transparent;
+    border-radius: 4px;
+}
+
+@mixin button-outline--green-selected {
+    background-color: $green-dark;
+}
+
+@mixin button-outline--orange {
+    border-color: $orange-ceneo;
+    color: $orange-ceneo;
+}
+
+@mixin button-outline--orange-selected {
+    background-color: $orange-ceneo;
+}
+
+@mixin button-outline--red {
+    border-color: $red-dark;
+    color: $red-dark;
+}
+
+@mixin button-outline--red-selected {
+    background-color: $red-dark;
+}
+
+@mixin button-lime {
+    border: 2px solid $lime-yellow;
+    cursor: pointer;
+    outline: none;
+    color: $lime-yellow;
+    text-decoration: none;
+
+    background: transparent;
+    border-radius: 4px;
+
+}
+
+@mixin button-lime--selected {
+    background-color: $lime-yellow;
+}
+
+@mixin button-outline--primary {
+    border: 2px solid $primary-color;
+
+    cursor: pointer;
+    outline: none;
+    color: $primary-color;
+    text-decoration: none;
+
+    background: transparent;
+    border-radius: 4px;
+}
+
+@mixin button-outline--primary-selected {
+    background-color: $primary-color;
+}
+
+@mixin button-white {
+    border: 2px solid #fff;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    text-decoration: none;
+
+    background: transparent;
+    border-radius: 4px;
+}
+
+@mixin button-white--selected {
+    background-color: #fff;
+}

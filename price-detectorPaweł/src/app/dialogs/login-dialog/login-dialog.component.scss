@@ -1,0 +1,35 @@
+@import "../../config";
+
+.login-dialog {
+  box-sizing: content-box;
+  width: 100% !important;
+  //padding: 100px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //padding: 100px;
+
+    mat-form-field {
+      width: 200px;
+      margin: auto;
+    }
+
+    .login-button {
+      @include button-outline--primary;
+      width: 150px;
+      height: 35px;
+      font-size: 17px;
+
+      margin-top: 20px;
+    }
+
+    .login-button:hover {
+      @include button-outline--primary-selected;
+      color: #fff;
+    }
+  }
+}
+
+

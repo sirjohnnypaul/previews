@@ -1,0 +1,206 @@
+@import "../../config";
+
+h2 {
+  @include flex-center;
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.past-time {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+
+}
+
+.past-time__box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid #4C4D45;
+  padding: 5px 7px;
+
+}
+.past-time__box:hover {
+  background-color: #E6EEC3;
+}
+
+
+.dotted-spacer {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+}
+
+.box__name {
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+
+
+  &--current {
+    font-size: 20px;
+  }
+
+  &--lowest {
+    color: $green-dark;
+  }
+
+  &--start {
+    color: $gray-dark;
+  }
+
+  &--highest {
+    color: $red-dark;
+  }
+
+}
+
+.box__price {
+  width: 100%;
+  text-align: center;
+
+  &--current {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  &--lowest {
+    color: $green-dark;
+    font-weight: bold;
+  }
+
+  &--start {
+    color: $gray-dark;
+    font-weight: bold;
+  }
+
+  &--highest {
+    color: $red-dark;
+  }
+}
+
+.box__date {
+  width: 100%;
+  text-align: center;
+
+  &--current {
+    font-weight: bold;
+  }
+
+  &--lowest {
+    //color: $green-dark;
+  }
+
+  &--start {
+
+  }
+
+  &--highest {
+
+  }
+}
+
+mat-dialog-actions {
+  @include flex-center;
+  justify-content: space-around !important;
+}
+
+
+.buy-now-button {
+  @include button-outline;
+  @include button-outline--green;
+  padding: 5px 10px;
+  width: 120px;
+  height: 30px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.buy-now-button:hover {
+  @include button-outline--green-selected;
+  color: #fff;
+}
+
+.ceneo-button {
+  @include button-outline;
+  @include button-outline--orange;
+  padding: 5px 10px;
+  width: 120px;
+  height: 30px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.ceneo-button:hover {
+  @include button-outline--orange-selected;
+  color: #fff;
+}
+
+.remove-button {
+  @include button-outline;
+  @include button-outline--red;
+  padding: 5px 10px;
+  width: 120px;
+  height: 30px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.remove-button:hover {
+  @include button-outline--red-selected;
+  color: #fff;
+}
+
+@include phone {
+  .past-time__box {
+    padding: 10px 15px;
+  }
+
+  .buy-now-button {
+    order: 2;
+  }
+
+  .ceneo-button {
+    order: 1;
+  }
+
+  .remove-button {
+    order: 3;
+  }
+}
+
+@include tablet {
+  .past-time__box:nth-child(2) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .past-time {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .past-time__box {
+
+    &--start {
+      margin: 10px 30px;
+    }
+  }
+}
+
+@include desktop {
+
+}
+
+@include desktop-xl {
+
+}
+
+

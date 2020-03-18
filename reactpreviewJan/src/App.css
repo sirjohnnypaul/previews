@@ -1,0 +1,25 @@
+.App {
+ 
+}
+
+.app-header .icon {
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.app-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10vh;
+    background: darkblue;
+}
+
+.app-header div {
+    width: 100px;
+    color: white;
+    font-size: 25px;
+    font-family: arial;
+    font-weight: bold;
+}

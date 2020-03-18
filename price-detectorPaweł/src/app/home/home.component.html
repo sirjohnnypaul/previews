@@ -1,0 +1,55 @@
+<!--NAVBAR-->
+<mat-toolbar color="primary" class="navbar">
+    <mat-toolbar-row class="logo-row">
+        <span>Price Detector <i class="fa fa-angle-double-right"></i></span>
+        <span><i class="fa fa-bars hamburger-menu" (click)="sideMenu.toggle()"></i></span>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row class="form-row">
+        <form class="product-form" [formGroup]="newProductForm" (ngSubmit)="onAddNewProduct()">
+            <mat-form-field class="product-url">
+                <input
+                    matInput
+                    placeholder="Product url"
+                    formControlName="name"
+                    type="text">
+                <!--<mat-error *ngIf="newProductForm.get('name').hasError('required')">-->
+                <!--Product url is required.-->
+                <!--</mat-error>-->
+                <!--<mat-error *ngIf="newProductForm.get('name').hasError('pattern')">-->
+                <!--Enter valid product url.-->
+                <!--</mat-error>-->
+            </mat-form-field>
+            <button mat-button mat-mini-fab class="product-add" [disabled]="!newProductForm.valid"><i
+                class="fa fa-plus"></i></button>
+        </form>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-sidenav-container>
+    <!--SIDENAV-->
+    <mat-sidenav position="end" mode="over" role="navigation" #sideMenu>
+        <ul class="sidenav-list">
+            <li class="sidenav-list__item"><a routerLink="/products" routerLinkActive="selected-tab"><i
+                class="fas fa-list"></i> HOME</a></li>
+            <li class="sidenav-list__item"><a routerLink="/settings" routerLinkActive="selected-tab"><i class="fas fa-cog"></i> SETTINGS</a>
+            </li>
+            <li class="sidenav-list__item"><a routerLink="/history" routerLinkActive="selected-tab"><i class="fas fa-history"></i>
+                HISTORY</a></li>
+            <li class="sidenav-list__item"><a routerLink="/plans" routerLinkActive="selected-tab"><i class="fas fa-chart-line"></i>
+                PLANS</a></li>
+            <li class="sidenav-list__item"><a routerLink="/payments" routerLinkActive="selected-tab"><i class="far fa-credit-card"></i>
+                PAYMENTS</a></li>
+            <li class="sidenav-list__item"><a routerLink="/feedback" routerLinkActive="selected-tab"><i class="fas fa-comments"></i> FEEDBACK</a>
+            </li>
+            <li class="sidenav-list__item"><a (click)="onLogout()"><i class="fas fa-sign-out-alt"></i> LOGOUT</a>
+            </li>
+        </ul>
+    </mat-sidenav>
+    <!--MAIN CONTAINER-->
+    <mat-sidenav-content role="main" class="wrapper">
+        <!--<app-products-list></app-products-list>-->
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

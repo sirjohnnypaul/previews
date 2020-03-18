@@ -1,0 +1,41 @@
+<h2 mat-dialog-title>{{currentProduct.name}}</h2>
+<mat-dialog-content>
+  <div class="current-time">
+    <div class="current-time_box">
+      <div class="box__name box__name--current">Current Price</div>
+      <div class="box__price box__price--current">{{currentProduct.priceCurrent}}</div>
+      <div class="box__date box__date--current">{{currentProduct.dateLastChecked}}</div>
+      <!--<i class="fa fa-ellipsis-h dotted-spacer"></i>-->
+
+    </div>
+  </div>
+  <div class="past-time">
+    <div class="past-time__box">
+      <div class="box__name box__name--lowest">Lowest Price</div>
+      <div class="box__price box__price--lowest">{{currentProduct.priceLowest}}</div>
+      <div class="box__date box__date--lowest">{{currentProduct.dateLowest}}</div>
+      <!--<i class="fa fa-ellipsis-h dotted-spacer"></i>-->
+
+    </div>
+    <div class="past-time__box">
+      <div class="box__name box__name--start">Start Price</div>
+      <div class="box__price box__price--start">{{currentProduct.priceStart}}</div>
+      <div class="box__date box__date--start">{{currentProduct.dateAdded}}</div>
+      <!--<i class="fa fa-ellipsis-h dotted-spacer"></i>-->
+
+    </div>
+    <div class="past-time__box">
+      <div class="box__name box__name--highest">Highest Price</div>
+      <div class="box__price box__price--highest">{{currentProduct.priceHighest}}</div>
+      <div class="box__date box__date--highest">{{currentProduct.dateHighest}}</div>
+      <!--<i class="fa fa-ellipsis-h dotted-spacer"></i>-->
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <a [href]="currentProduct.url" class="buy-now-button">Buy Now</a>
+  <a href="https://ceneo.pl" class="ceneo-button">CENEO</a>
+  <a (click)="onProductDelete()" class="remove-button">REMOVE</a>
+
+
+</mat-dialog-actions>
